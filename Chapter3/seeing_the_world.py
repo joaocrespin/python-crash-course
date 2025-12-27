@@ -1,0 +1,15 @@
+locations = ['Belford Roxo', 'Vila Militar', 'São José dos Campos', 'Araraquara', 'Santo André']
+
+print(locations)
+print(sorted(locations))
+print(locations)
+print(sorted(locations, reverse=True))
+print(locations)
+locations.reverse()
+print(locations)
+locations.reverse()
+print(locations)
+locations.sort()
+print(locations)
+locations.sort(reverse=True)
+print(locations)
