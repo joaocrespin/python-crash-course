@@ -9,6 +9,6 @@ for food in foods:
 
 foods = ('cheese', 'string cheese', 'melted cheese', 'shrimp pie', 'shrimp', 'squid ink')
 
-print("\nRestaurant's revised menu: ")
+print("Restaurant's revised menu: ")
 for food in foods:
     print(food.title())
