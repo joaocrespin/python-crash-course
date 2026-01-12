@@ -5,6 +5,7 @@ messages = ['hello', 'how are you', 'i have been living in italy now',
 sent_messages=[]
 
 def send_message(messages, sent_messages):
+    '''Prints a message and move it to the sent_messages list'''
     while messages:
         print(messages[0])
         sent_messages.append(messages[0])
