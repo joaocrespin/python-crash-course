@@ -1,0 +1,5 @@
+In Python you can use lists to store lots of data
+In Python you can do pretty much anything you want
+In Python you can create classes to mimic real life
+In Python you can open files to manipulate data'
+In Python you can be truly happy
