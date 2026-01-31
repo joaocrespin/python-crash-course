@@ -1,0 +1,60 @@
+class Settings:
+    '''A class to store all settings for Sideways Shooter.'''
+
+    def __init__(self):
+        # Screen settings
+        self.screen_width = 1200
+        self.screen_height = 800
+        self.bg_color = (11, 17, 38)
+
+        # Ship settings
+        self.ship_limit = 3
+
+        # Bullet settings
+        self.bullet_width = 15
+        self.bullet_height = 3
+        self.bullet_color = (255, 255, 0)
+        self.bullets_allowed = 3
+
+        # Star settings
+        self.fleet_drop_speed = 10
+
+        # Misc settings       
+        self.speedup_scale = 1.1
+        self.score_scale = 1.5
+
+        self.difficulty_level = 'hard'
+
+        self.initialize_dynamic_settings()
+
+    def initialize_dynamic_settings(self):
+        '''Initialize settings that change during the game.'''
+        if self.difficulty_level == 'easy':
+            self.ship_limit = 5
+            self.bullets_allowed = 10
+            self.ship_speed = 0.75
+            self.bullet_speed = 1.5
+            self.star_speed = 0.5
+        elif self.difficulty_level == 'medium':
+            self.ship_limit = 3
+            self.bullets_allowed = 3
+            self.ship_speed = 2.5
+            self.bullet_speed = 3.0
+            self.star_speed = 1.0
+        elif self.difficulty_level == 'hard':
+            self.ship_limit = 2
+            self.bullets_allowed = 3
+            self.ship_speed = 3.0
+            self.bullet_speed = 6.0
+            self.star_speed = 2.0
+
+        self.star_points = 50
+        self.fleet_direction = 1
+
+    def increase_speed(self):
+        '''Increase speed settings.'''
+        self.ship_speed *= self.speedup_scale
+        self.bullet_speed *= self.speedup_scale
+        self.star_speed *= self.speedup_scale
+
+        self.star_points = int(self.star_points * self.score_scale)
