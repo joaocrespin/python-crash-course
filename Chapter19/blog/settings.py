@@ -100,3 +100,4 @@ STATIC_URL = 'static/'
 
 LOGIN_REDIRECT_URL = 'blog:index'
 LOGOUT_REDIRECT_URL = 'blog:index'
+LOGIN_URL = 'accounts:login'
