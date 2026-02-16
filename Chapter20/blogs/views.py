@@ -83,6 +83,16 @@ def edit_post(request, post_id):
     context = {'post':post, 'blog':blog, 'form' : form}
     return render(request, 'blogs/edit_post.html', context)
 
+@login_required
+def delete_post(request, post_id):
+    '''Delete an existing post.'''
+    post = BlogPost.objects.get(id=post_id)
+    blog = post.blog
+    check_blog_owner(blog, request.user)
+    post.delete()
+
+    return redirect('blog:blog', blog_id=blog.id)
+
 def check_blog_owner(blog, user):
     '''Make sure the blog belongs to the current user'''
     if blog.owner != user:

@@ -17,6 +17,8 @@
         {{ post.date_added|date:'M d, Y H:i' }}
         <small><a href="{% url 'blog:edit_post' post.id %}">
           edit post</a></small>
+          <small><a href="{% url 'blog:delete_post' post.id %}">
+          DELETE</a></small>
       </h4>
       <!-- Card body with post text -->
       <div class="card-body">{{ post.text|linebreaks }}</div>
